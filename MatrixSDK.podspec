@@ -23,15 +23,12 @@ Pod::Spec.new do |s|
   s.swift_versions = ['5.1', '5.2']
   
   s.ios.deployment_target = "15.1"
-  s.osx.deployment_target = "10.15"
   
   s.default_subspec = 'Core'
   s.subspec 'Core' do |ss|
       ss.ios.deployment_target = "15.1"
-      ss.osx.deployment_target = "10.15"
       
       ss.source_files = "MatrixSDK", "MatrixSDK/**/*.{h,m}", "MatrixSDK/**/*.{swift}"
-      ss.osx.exclude_files = "MatrixSDK/VoIP/MXiOSAudioOutputRoute*.swift"
       ss.private_header_files = ['MatrixSDK/MatrixSDKSwiftHeader.h', "MatrixSDK/**/*_Private.h"]
       ss.resources = "MatrixSDK/**/*.{xcdatamodeld}"
       ss.frameworks = "CoreData"
