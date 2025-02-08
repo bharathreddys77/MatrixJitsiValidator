@@ -58,6 +58,7 @@ Pod::Spec.new do |s|
     
     # Use WebRTC framework included in Jitsi Meet SDK
     # Use the lite version so we don't add a dependency on Giphy.
+    ss.ios.dependency 'JitsiMeetSDKLite', '10.3.0-lite'
   end
 
 end
