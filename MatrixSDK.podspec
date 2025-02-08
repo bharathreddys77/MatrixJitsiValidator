@@ -42,7 +42,6 @@ Pod::Spec.new do |s|
       ss.dependency 'Realm', '10.27.0'
       ss.dependency 'libbase58', '~> 0.1.4'
       ss.dependency 'MatrixSDKCrypto', '0.4.3', :configurations => ["DEBUG", "RELEASE"], :inhibit_warnings => true
-      ss.ios.dependency 'JitsiMeetSDKLite', '10.0.0-lite'
   end
 
   s.subspec 'JingleCallStack' do |ss|
@@ -59,7 +58,6 @@ Pod::Spec.new do |s|
     
     # Use WebRTC framework included in Jitsi Meet SDK
     # Use the lite version so we don't add a dependency on Giphy.
-    ss.ios.dependency 'JitsiMeetSDKLite', '10.0.0-lite'
   end
 
 end
