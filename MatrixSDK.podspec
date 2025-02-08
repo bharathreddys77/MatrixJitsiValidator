@@ -24,32 +24,24 @@ Pod::Spec.new do |s|
   
   s.ios.deployment_target = "15.1"
   
-  s.default_subspec = 'Core'
-  s.subspec 'Core' do |ss|
-      ss.ios.deployment_target = "15.1"
+      s.ios.deployment_target = "15.1"
       
-      ss.source_files = "MatrixSDK", "MatrixSDK/**/*.{h,m}", "MatrixSDK/**/*.{swift}"
-      ss.private_header_files = ['MatrixSDK/MatrixSDKSwiftHeader.h', "MatrixSDK/**/*_Private.h"]
-      ss.resources = "MatrixSDK/**/*.{xcdatamodeld}"
-      ss.frameworks = "CoreData"
+      s.source_files = "MatrixSDK", "MatrixSDK/**/*.{h,m}", "MatrixSDK/**/*.{swift}", "MatrixSDKExtensions/VoIP/Jingle/**/*.{h,m}"
+      s.private_header_files = ['MatrixSDK/MatrixSDKSwiftHeader.h', "MatrixSDK/**/*_Private.h"]
+      s.resources = "MatrixSDK/**/*.{xcdatamodeld}"
+      s.frameworks = "CoreData"
 
-      ss.dependency 'AFNetworking', '~> 4.0.0'
-      ss.dependency 'GZIP', '~> 1.3.0'
+      s.dependency 'AFNetworking', '~> 4.0.0'
+      s.dependency 'GZIP', '~> 1.3.0'
 
-      ss.dependency 'SwiftyBeaver', '1.9.5'
+      s.dependency 'SwiftyBeaver', '1.9.5'
 
       # Requirements for e2e encryption
-      ss.dependency 'Realm', '10.27.0'
-      ss.dependency 'libbase58', '~> 0.1.4'
-      ss.dependency 'MatrixSDKCrypto', '0.4.3', :configurations => ["DEBUG", "RELEASE"], :inhibit_warnings => true
-  end
+      s.dependency 'Realm', '10.27.0'
+      s.dependency 'libbase58', '~> 0.1.4'
+      s.dependency 'MatrixSDKCrypto', '0.4.3', :configurations => ["DEBUG", "RELEASE"], :inhibit_warnings => true
+  
 
-  s.subspec 'JingleCallStack' do |ss|
-    ss.ios.deployment_target = "15.1"
-    
-    ss.source_files  = "MatrixSDKExtensions/VoIP/Jingle/**/*.{h,m}"
-    
-    ss.dependency 'MatrixSDK/Core'
     
     # The Google WebRTC stack
     # Note: it is disabled because its framework does not embed x86 build which
@@ -58,7 +50,6 @@ Pod::Spec.new do |s|
     
     # Use WebRTC framework included in Jitsi Meet SDK
     # Use the lite version so we don't add a dependency on Giphy.
-    ss.ios.dependency 'JitsiMeetSDKLite', '10.3.0-lite'
-  end
+    s.ios.dependency 'JitsiMeetSDKLite', '10.3.0-lite'
 
 end
