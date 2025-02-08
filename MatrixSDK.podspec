@@ -24,7 +24,6 @@ Pod::Spec.new do |s|
   
   s.ios.deployment_target = "15.1"
   
-      s.ios.deployment_target = "15.1"
       
       s.source_files = "MatrixSDK", "MatrixSDK/**/*.{h,m}", "MatrixSDK/**/*.{swift}", "MatrixSDKExtensions/VoIP/Jingle/**/*.{h,m}"
       s.private_header_files = ['MatrixSDK/MatrixSDKSwiftHeader.h', "MatrixSDK/**/*_Private.h"]
@@ -50,6 +49,6 @@ Pod::Spec.new do |s|
     
     # Use WebRTC framework included in Jitsi Meet SDK
     # Use the lite version so we don't add a dependency on Giphy.
-    s.ios.dependency 'JitsiMeetSDKLite', '10.3.0-lite'
+    s.dependency 'JitsiMeetSDKLite', '10.3.0-lite'
 
 end
