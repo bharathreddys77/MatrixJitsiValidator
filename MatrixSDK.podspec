@@ -39,7 +39,6 @@ Pod::Spec.new do |s|
       s.dependency 'Realm', '10.27.0'
       s.dependency 'libbase58', '~> 0.1.4'
       s.dependency 'MatrixSDKCrypto', '0.4.3', :configurations => ["DEBUG", "RELEASE"], :inhibit_warnings => true
-      s.dependency 'JitsiWebRTC'
 
     
     # The Google WebRTC stack
