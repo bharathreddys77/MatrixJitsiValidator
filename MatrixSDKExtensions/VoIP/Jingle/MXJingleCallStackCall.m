@@ -782,8 +782,8 @@ didRemoveIceCandidates:(NSArray<RTCIceCandidate *> *)candidates;
             
             // Display the self view
             // Use selfVideoView as a container of a RTCEAGLVideoView
-//            MXJingleVideoView *renderView = [[MXJingleVideoView alloc] initWithContainerView:self.selfVideoView];
-//            [self startVideoCaptureWithRenderer:renderView];
+            MXJingleVideoView *renderView = [[MXJingleVideoView alloc] initWithContainerView:self.selfVideoView];
+            [self startVideoCaptureWithRenderer:renderView];
         }
     }
     
